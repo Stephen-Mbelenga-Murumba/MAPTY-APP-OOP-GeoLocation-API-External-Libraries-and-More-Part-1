@@ -62,6 +62,7 @@ class Cycling extends Workout {
 //////////////////////////////////////
 //// APPLICATION ARCHITECTURE
 class App {
+  // Private Fields
   #map;
   #mapZoomLevel = 13;
   #mapEvent;
@@ -248,7 +249,6 @@ class App {
     const workout = this.#workouts.find(
       work => work.id === workoutEl.dataset.id,
     );
-    console.log(workout);
     this.#map.setView(workout.coords, this.#mapZoomLevel, {
       animate: true,
       pan: {
@@ -273,4 +273,5 @@ class App {
     location.reload();
   }
 }
+
 const app = new App();
